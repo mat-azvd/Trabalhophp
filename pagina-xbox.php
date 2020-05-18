@@ -5,7 +5,6 @@
 <link rel="stylesheet" type="text/css" href="css/slide.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="css/reset.css">
 
 <?php include("cabecalho.php");?>
 
