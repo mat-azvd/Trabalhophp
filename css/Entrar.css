@@ -1,0 +1,7 @@
+.container-acesso{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 760px;
+    border-style: dotted;
+}
