@@ -33,7 +33,7 @@
 
             <div class="navbar">
                 <a id="Playstation" href="pagina-playstation.php">Playstation</a>
-                <a id="Xbox" href="pagina_xbox.php">Xbox</a>
+                <a id="Xbox" href="pagina-xbox.php">Xbox</a>
                 <a id="Nintendo" href="pagina-nintendo.php">Nintendo</a>
                 <a id="Clássicos" href="pagina-classicos.php">Classicos</a><br>
             </div>
