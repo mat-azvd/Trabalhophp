@@ -1,11 +1,3 @@
-
-
-<html lang="pt-br">
-
-<link rel="stylesheet" type="text/css" href="css/slide.css">
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-
 <?php include("cabecalho.php");?>
 
 
