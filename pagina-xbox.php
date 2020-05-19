@@ -3,8 +3,6 @@
 
 
 
-
-
             <div class="frist-thumb">
                 <h1 id="mais-vendidos">Xbox</h1>
                 <hr style="width:50%;">

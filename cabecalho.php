@@ -19,7 +19,8 @@
 
             <header>
                 <div class="cabecalho">
-                    <img id="logo" src="logomarca.png" alt="Robot Games - Logo" class="cabecalho"><br>
+                    
+                    <a href="index.php"> <img id="logo" src="logomarca.png" alt="Robot Games - Logo" class="cabecalho"></a>
                 </div>
             </header>
 
