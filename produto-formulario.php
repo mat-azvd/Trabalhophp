@@ -7,7 +7,7 @@
 <?php include("cabecalho.php"); ?>
 
 <html>
-    <form action="adiciona-produto.php">
+    <form action="insereprodutos.php">
         <table class="table">
             <tr>
                 <td>Nome</td> 
@@ -26,7 +26,7 @@
 
             <tr>
                 <td>Imagem</td>
-                <div><input name="imagem" type="file"/></div>
+                <td><input name="imagem" type="file"/></td>
             </tr>
 
             <tr>

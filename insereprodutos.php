@@ -10,7 +10,7 @@
 $nome = $_GET["nome"];
 $preco = $_GET["preco"];
 $detalhes = $_GET['detalhes'];
-$imagem = $_GET['imagem'] ['tmp_name'];
+$imagem = $_FILES['imagem']['tmp_name'];
 $tamanho_imagem = $_FILES['imagem']['size'];
 $tipo_imagem = $_FILES['imagem']['type'];
 $nome_imagem = $_FILES['imagem']['name'];
