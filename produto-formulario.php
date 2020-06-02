@@ -1,7 +1,7 @@
 <?php include("cabecalho.php"); ?>
 
 <html>
-    <form action="insereprodutos.php">
+    <form method="POST" action="insereprodutos.php" enctype="multipart/form-data">
         <table class="table">
             <tr>
                 <td>Nome</td> 
@@ -20,7 +20,7 @@
 
             <tr>
                 <td>Imagem</td>
-                <td><input name="imagem" type="file"/></td>
+                <td><input name="imagem" type="file" id="imagem" /></td>
             </tr>
 
             <tr>
