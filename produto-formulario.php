@@ -1,5 +1,10 @@
 <?php include("cabecalho.php"); ?>
 
+<?php if(array_key_exists("removido", $_GET) && $_GET['removido']=='true') { ?>
+    <p class="alert-success">Produto adicionado com sucesso.</p>
+  
+<?php } ?>
+
 <html>
     <form method="POST" action="insereprodutos.php" enctype="multipart/form-data">
         <table class="table">
@@ -11,6 +16,16 @@
             <tr>
                 <td>Preço</td>
                 <td><input type="number" class="form-control" name="preco" /></td>
+            </tr>
+
+            <tr>   
+                <td>Categoria</td>
+                <td><select name="categoria" >
+                    <option value="playstation">Playstation</option>
+                    <option value="xbox">Xbox</option>
+                    <option value="Nintendo">Nintendo</option>
+                    <option value="classicos">Classicos</option>
+                </td>
             </tr>
 
             <tr>

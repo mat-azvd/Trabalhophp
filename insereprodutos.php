@@ -10,6 +10,7 @@
 
 $nome = $_POST["nome"];
 $preco = $_POST["preco"];
+$categoria = $_POST["categoria"];
 $detalhes = $_POST["detalhes"];
 $imagem = $_FILES['imagem']['name'];
 $extensao = strtolower(substr($_FILES['imagem']['name'], -4));
@@ -19,17 +20,19 @@ $arquivo_nome = $imagem;
 move_uploaded_file($_FILES['imagem']['tmp_name'], $pasta_dir.$arquivo_nome);
 
 
-function insereProduto($conexao, $nome, $preco, $detalhes, $arquivo_nome){
-    $query = "insert into produtos (nome, preco, detalhes, imagem) values ('{$nome}','{$preco}','{$detalhes}','{$arquivo_nome}')";
+function insereProduto($conexao, $nome, $preco, $categoria, $detalhes, $arquivo_nome){
+    $query = "insert into produtos (nome, preco, categoria, detalhes, imagem) values ('{$nome}','{$preco}','{$categoria}','{$detalhes}','{$arquivo_nome}')";
     $resultadoDaInsercao = mysqli_query($conexao, $query);
     return $resultadoDaInsercao;
    }
    
 
 
-if(insereProduto($conexao, $nome, $preco, $detalhes, $arquivo_nome, )) {
+if(insereProduto($conexao, $nome, $preco, $categoria, $detalhes, $arquivo_nome, )) {
+
+    header("Location: produto-formulario.php?removido=true");
+    die();
 ?>
-<p class="alert-success">Produto <?= $nome; ?>, <?= $preco; ?>, <?= $detalhes; ?> adicionado com sucesso!</p>
 <?php
 } else {
     $msg = mysqli_error($conexao);
