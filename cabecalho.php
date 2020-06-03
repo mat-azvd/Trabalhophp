@@ -29,7 +29,7 @@
                     <?php
                     if(isset($_COOKIE["usuario_logado"])) {
                     ?>
-                    <p class="text-success">Você está logado como <?=$_COOKIE["usuario_logado"] ?></p>
+                    <p class="text-success">Bem vindo <?=$_COOKIE["usuario_logado"] ?>!</p>
                     <?php
                     }else {
                     ?>
