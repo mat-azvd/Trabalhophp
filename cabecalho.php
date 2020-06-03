@@ -27,17 +27,25 @@
             <div class="barra-header">
                 <div>
                     <?php
-                    if(isset($_COOKIE["usuario_logado"])) {
+                    if(isset($_SESSION["usuario_logado"])) {
                     ?>
-                    <p class="text-success">Bem vindo <?=$_COOKIE["usuario_logado"] ?>!</p>
+                    <p class="text-success">Bem vindo <?=$_SESSION["usuario_logado"] ?>!</p>
                     <?php
                     }else {
-                    ?>
+                            if(isset($_COOKIE["admin_logado"])) {
+                                ?>
+                                <p class="text-success">Bem vindo <?=$_COOKIE["admin_logado"] ?>!</p><br>
+                                <a href="produto-formulario.php"> - Inserir Produto - </a>
+                            <?php
+                            }else{
+                            ?>
+            
 
-                        <a href="minha-conta.php"> - Minha Conta - </a>
-                        <a href="cadastro.php"> - Cadastrar-se - </a>
-                    <?php
-                    }
+                                <a href="minha-conta.php"> - Minha Conta - </a>
+                                <a href="cadastro.php"> - Cadastrar-se - </a>
+                            <?php
+                            }
+                        }
                     ?>
                     
                 </div><br>

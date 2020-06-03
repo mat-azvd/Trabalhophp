@@ -12,6 +12,11 @@
     max-width: 500px;
 }
 
+.text-entrada {
+    display: flex;
+    align-items: flex-start;
+}
+
 .barra-header {
     display: flex;
     justify-content: center;

@@ -10,7 +10,7 @@ $telefone = $_POST["telefone"];
 
 
 function insereUsuario($conexao, $email, $senha, $primeironome, $sobrenome, $telefone){
-    $query = "insert into usuarios(email, senha, primeironome, sobrenome, telefone) values ('{$email}','{$senha}','{$primeironome}','{$sobrenome}','{$telefone}')";
+    $query = "insert into usuarios(email, senha, primeironome, sobrenome, telefone, admin) values ('{$email}','{$senha}','{$primeironome}','{$sobrenome}','{$telefone}', '0')";
     $resultadoDaInsercao = mysqli_query($conexao, $query);
     return $resultadoDaInsercao;
    }

@@ -1,5 +1,7 @@
 <?php include("conexao.php");?> 
 
+<?php include("logica-usuario.php");?> 
+
 <?php
 
 $email = $_POST["email"];
@@ -19,13 +21,24 @@ $usuario = buscaUsuario($conexao, $_POST["email"], $_POST["senha"]);
 echo $usuario;
 
 if($usuario == null) {
+    header("Location: minha-conta.php?erro");
     $msg = mysqli_error($conexao);
    } else {
-       
-    setcookie("usuario_logado", $usuario["email"]);
+    
+    if($usuario["admin"] == 1){
 
-    header("Location: index.php?logado");
-   }
+        setcookie("admin_logado", $usuario["email"]);
+
+        header("Location: index.php?adminlogado");
+
+    }else{
+
+        logaUsuario($email);
+
+
+        header("Location: index.php?usuariologado");
+        }
+    }
    die();
 
 ?>
