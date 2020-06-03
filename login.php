@@ -1,6 +1,6 @@
 <?php include("conexao.php");?> 
 
-<?php include("logica-usuario.php");?> 
+<?php //include("logica-usuario.php");?> 
 
 <?php
 
@@ -33,8 +33,7 @@ if($usuario == null) {
 
     }else{
 
-        logaUsuario($email);
-
+        setcookie("usuario_logado", $usuario["email"]);
 
         header("Location: index.php?usuariologado");
         }

@@ -13,6 +13,17 @@
 
 
 <body>
+<?php
+if(isset($_GET["logout"]) && $_GET["logout"]==true) {
+    setcookie("admin_logado");
+    setcookie("usuario_logado");
+?>    
+
+<?php   
+    header("Location: index.php");
+}
+?>
+
     <div class="fundo">
 
         <div class="corpo-principal">
@@ -27,20 +38,20 @@
             <div class="barra-header">
                 <div>
                     <?php
-                    if(isset($_SESSION["usuario_logado"])) {
+                    if(isset($_COOKIE["usuario_logado"])) {
                     ?>
-                    <p class="text-success">Bem vindo <?=$_SESSION["usuario_logado"] ?>!</p>
+                    <p class="text-success">Bem vindo <?=$_COOKIE["usuario_logado"] ?>!</p><br>
+                    <a href="index.php?logout=true" > - logout - </a>
                     <?php
                     }else {
                             if(isset($_COOKIE["admin_logado"])) {
                                 ?>
                                 <p class="text-success">Bem vindo <?=$_COOKIE["admin_logado"] ?>!</p><br>
                                 <a href="produto-formulario.php"> - Inserir Produto - </a>
+                                <a href="index.php?logout=true" > - logout - </a>
                             <?php
                             }else{
                             ?>
-            
-
                                 <a href="minha-conta.php"> - Minha Conta - </a>
                                 <a href="cadastro.php"> - Cadastrar-se - </a>
                             <?php
