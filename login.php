@@ -21,6 +21,9 @@ echo $usuario;
 if($usuario == null) {
     $msg = mysqli_error($conexao);
    } else {
+       
+    setcookie("usuario_logado", $usuario["email"]);
+
     header("Location: index.php?logado");
    }
    die();

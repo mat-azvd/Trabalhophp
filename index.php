@@ -1,7 +1,5 @@
 <?php include("cabecalho.php");?>
 
-
-
 <div class="slideshow-container">
 
     <div class="mySlides fade">

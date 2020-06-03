@@ -26,8 +26,20 @@
 
             <div class="barra-header">
                 <div>
-                    <a href="minha-conta.php"> - Minha Conta - </a>
-                    <a href="cadastro.php"> - Cadastrar-se - </a>
+                    <?php
+                    if(isset($_COOKIE["usuario_logado"])) {
+                    ?>
+                    <p class="text-success">Você está logado como <?=$_COOKIE["usuario_logado"] ?></p>
+                    <?php
+                    }else {
+                    ?>
+
+                        <a href="minha-conta.php"> - Minha Conta - </a>
+                        <a href="cadastro.php"> - Cadastrar-se - </a>
+                    <?php
+                    }
+                    ?>
+                    
                 </div><br>
             </div>
 
