@@ -32,17 +32,16 @@ function login() {
 
 function validaform() {
 
-    var username = document.getElementById("username");
-    var senha = document.getElementById("senha");
     var email = document.getElementById("email");
-    var telefone = document.getElementById("telefone");
+    var senha = document.getElementById("senha");
     var senha2 = document.getElementById("senha2");
+    var telefone = document.getElementById("telefone");
     var primeironome = document.getElementById("primeironome");
     var sobrenome = document.getElementById("sobrenome");
 
 
-    if (username.value == "") {
-        alert("Username nao informado");
+    if (email.value == "" || email.value.indexOf('@') == -1 || email.value.indexOf('.') == -1) {
+        alert("Email nao informado ou invalido")
     } else {
         if (senha.value == "") {
             alert("Senha nao Informada");
@@ -50,26 +49,23 @@ function validaform() {
             if (senha2.value == "" || senha2.value != senha.value) {
                 alert("Senha nao informado ou senhas diferentes")
             } else {
-                if (email.value == "" || email.value.indexOf('@') == -1 || email.value.indexOf('.') == -1) {
-                    alert("Email nao informado ou invalido")
+                if (telefone.value == "" || telefone.value.length != 9) {
+                    alert("Telefone nao informado ou incorreto")
                 } else {
-                    if (telefone.value == "" || telefone.value.length != 9) {
-                        alert("Telefone nao informado ou incorreto")
+                    if (primeironome.value == "") {
+                        alert("Primeiro nome nao informado ou invalido")
                     } else {
-                        if (primeironome.value == "") {
-                            alert("Primeiro nome nao informado ou invalido")
+                        if (sobrenome.value == "") {
+                            alert("Sobrenome nao informado")
                         } else {
-                            if (sobrenome.value == "") {
-                                alert("Sobrenome nao informado")
-                            } else {
-                                alert("Cadastrado com sucesso!")
-                            }
+                            alert("Cadastrado com sucesso!")
                         }
                     }
                 }
             }
         }
     }
+
 
 
 

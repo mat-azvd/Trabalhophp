@@ -3,21 +3,26 @@
 
 
 
-            <div class="caixa-acesso">
-                <div>
-                    <h4 for="username">Email:</h4>
-                    <input id="campo-username" name="username" type="text" placeholder="digite o seu username" class="campo"><br>
+            <div class="caixa-acesso" >
 
-                </div>
+            <form class="acesso" action="login.php" method="post">
+                <tr>
+                    <td> Email:</td>
+                    <td><input class="form-control" type="email" name="email"></td>
 
-                <div>
+                </tr>
 
-                    <h4 for="senha">Senha:</h4>
-                    <input id="campo-senha" type="password" placeholder="digite sua senha" class="campo campo-medio"><br>
-                </div>
+                <tr>
+
+                    <td>Senha</td>
+                        <td><input class="form-control" type="password" name="senha"></td>
+                     </tr>
+
+                </tr>
                 <div>
-                    <br><button id="acessar" type="button" class="botao-adicionar" onclick="login()">Acessar</button>
+                    <br><button id="acessar" type="submit" class="botao-adicionar">Acessar</button>
                 </div>
+                </form>
             </div>
 
 
@@ -33,7 +38,7 @@
 
     </div>
 
-    <script src="js/principal.js"></script>
+
 
 
 
