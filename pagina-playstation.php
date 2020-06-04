@@ -1,4 +1,4 @@
-<?php include ("banco-produtos.php");?>
+<?php include("banco-produtos.php");?>
 
 <?php include("cabecalho.php");?>
 
@@ -40,7 +40,7 @@
                         
                     <?php endforeach ?>
                 </div>
-    
+                <!--
                 <div class="container">
                     <div class="flex-viewport" style="overflow: hidden;position: relative;">
 
@@ -200,7 +200,7 @@
 
 
                 </div>
-
+-->
             </div>
         </div>
        

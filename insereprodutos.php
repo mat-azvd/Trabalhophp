@@ -22,7 +22,7 @@ move_uploaded_file($_FILES['imagem']['tmp_name'], $pasta_dir.$arquivo_nome);
 $diretorio = $pasta_dir.$arquivo_nome;
 
 
-function insereProduto($conexao, $nome, $preco, $categoria, $detalhes, $arquivo_nome){
+function insereProduto($conexao, $nome, $preco, $categoria, $detalhes, $diretorio){
     $query = "insert into produtos (nome, preco, categoria, detalhes, imagem) values ('{$nome}','{$preco}','{$categoria}','{$detalhes}','{$diretorio}')";
     $resultadoDaInsercao = mysqli_query($conexao, $query);
     return $resultadoDaInsercao;
@@ -30,7 +30,7 @@ function insereProduto($conexao, $nome, $preco, $categoria, $detalhes, $arquivo_
    
 
 
-if(insereProduto($conexao, $nome, $preco, $categoria, $detalhes, $arquivo_nome, )) {
+if(insereProduto($conexao, $nome, $preco, $categoria, $detalhes, $diretorio, )) {
 
     header("Location: produto-formulario.php?removido=true");
     die();
