@@ -1,16 +1,28 @@
-<?php include('conexao.php');?>
+<?php include("banco-produtos.php");?>
 
-<?php include('banco-produtos.php')?>
+<?php include("cabecalho.php");?>
+
+<?php include("conexao.php"); ?>
 
 
 <?php
+var_dump ($_GET['id']);
 
-$produto = buscaProduto($conexao);
+$id = $_GET['id'];
+
+
+$produto = buscaProduto($conexao, $id);
+
+var_dump ($id);
 
 $nome = $_POST["nome"];
+var_dump ($nome);
 $preco = $_POST["preco"];
+var_dump ($preco);
 $categoria = $_POST["categoria"];
+var_dump ($categoria);
 $detalhes = $_POST["detalhes"];
+var_dump ($detalhes);
 $imagem = $_FILES['imagem']['name'];
 $extensao = strtolower(substr($_FILES['imagem']['name'], -4));
 $pasta_dir = "imagem/";
@@ -19,18 +31,22 @@ $arquivo_nome = $imagem;
 move_uploaded_file($_FILES['imagem']['tmp_name'], $pasta_dir.$arquivo_nome);
 
 $diretorio = $pasta_dir.$arquivo_nome;
+var_dump ($diretorio);
 
-function alteraProduto($conexao, $nome, $preco, $categoria, $detalhes, $diretorio) {
- $query = "update produtos set nome = '{$nome}', preco = {$preco}, categoria = '{$categoria}', detalhes = '{$detalhes}', diretorio = '{$diretorio}' where id = '{$id}'";
+var_dump ($id);
+
+function alteraProduto($conexao, $nome, $preco, $categoria, $detalhes, $diretorio, $id) {
+ $query = "update produtos set nome='{$nome}',preco='{$preco}',categoria='{$categoria}',detalhes='{$detalhes}',diretorio='{$diretorio}', where id = '{$id}' ";
  $resultadoDaInsercao = mysqli_query($conexao, $query);
  return $resultadoDaInsercao;
 }
 
 
 
-/*if(alteraProduto($conexao, $nome, $preco, $categoria, $detalhes, $diretorio, )) {
 
-header("Location: pagina-produto.php?id=<?=  $produto['id'] ?>");
+if(alteraProduto($conexao, $nome, $preco, $categoria, $detalhes, $diretorio, $id )) {
+
+header("Location: pagina-produto.php?id= $id");
 
 die();
 ?>
@@ -38,9 +54,9 @@ die();
 } else {
 $msg = mysqli_error($conexao);
 ?>
-<p class="alert-danger">O produto <?= $nome; ?> não foi adicionado: <?=$msg ?></p>
+<p class="alert-danger">O produto <?= $nome; ?> não foi alterado: <?=$msg ?></p>
 <?php
 }
 mysqli_close($conexao);
+
 ?>
-*/

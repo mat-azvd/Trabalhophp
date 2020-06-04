@@ -4,8 +4,9 @@
 
 <?php include("conexao.php"); ?>
 
+<?php $id= $_GET['id'] ?>
 
-<?php $produto = buscaProduto($conexao);?>
+<?php $produto = buscaProduto($conexao, $id);?>
 
 <div class="flex-viewport" style="overflow: hidden; position: relative;">
 

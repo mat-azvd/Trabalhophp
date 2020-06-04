@@ -103,9 +103,9 @@ function removeProduto($conexao, $id) {
 
 <?php
 
-function buscaProduto($conexao){
+function buscaProduto($conexao, $id){
 
-    $idproduto = $_GET['id'];
+    $idproduto = $id;
 
     //echo $nomeproduto;
 

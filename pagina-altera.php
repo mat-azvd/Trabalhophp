@@ -5,10 +5,12 @@
 <?php include("conexao.php"); ?>
 
 <?php
-$produto = buscaProduto($conexao);
+$id = $_GET['id'];
+
+$produto = buscaProduto($conexao, $id);
 ?>
 
-<form method="POST" action="altera-produto.php" enctype="multipart/form-data">
+<form method="POST" action="altera-produto.php?id=<?=  $produto['id'] ?> " enctype="multipart/form-data">
     <h1>Alterar produto</h1>
         <table class="table">
             <tr>
@@ -23,8 +25,8 @@ $produto = buscaProduto($conexao);
 
             <tr>   
                 <td>Categoria</td>
-                <td><select name="categoria"  >
-                    <option value="<?php $produto['categoria'] ?>"><?php echo $produto['categoria'] ?></option>
+                <td><select name="categoria" >
+                    <option value="<?php echo $produto['categoria'] ?>"><?php echo $produto['categoria'] ?></option>
                     <option value="playstation">Playstation</option>
                     <option value="xbox">Xbox</option>
                     <option value="Nintendo">Nintendo</option>
