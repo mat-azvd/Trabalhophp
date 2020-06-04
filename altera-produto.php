@@ -28,15 +28,24 @@ $extensao = strtolower(substr($_FILES['imagem']['name'], -4));
 $pasta_dir = "imagem/";
 $arquivo_nome = $imagem;
 
-move_uploaded_file($_FILES['imagem']['tmp_name'], $pasta_dir.$arquivo_nome);
+var_dump ($arquivo_nome);
 
-$diretorio = $pasta_dir.$arquivo_nome;
+if($arquivo_nome == null) {
+    $diretorio = $produto['imagem'];
+    move_uploaded_file($_FILES['imagem']['tmp_name'], $diretorio);
+} else {
+    move_uploaded_file($_FILES['imagem']['tmp_name'], $pasta_dir.$arquivo_nome);
+    $diretorio = $pasta_dir.$arquivo_nome;
+}
+
 var_dump ($diretorio);
+
+var_dump ($arquivo_nome);
 
 var_dump ($id);
 
 function alteraProduto($conexao, $nome, $preco, $categoria, $detalhes, $diretorio, $id) {
- $query = "update produtos set nome='{$nome}',preco='{$preco}',categoria='{$categoria}',detalhes='{$detalhes}',diretorio='{$diretorio}', where id = '{$id}' ";
+ $query = "update produtos set nome='{$nome}', preco='{$preco}', categoria='{$categoria}', detalhes='{$detalhes}', imagem='{$diretorio}' where id = '$id' ";
  $resultadoDaInsercao = mysqli_query($conexao, $query);
  return $resultadoDaInsercao;
 }

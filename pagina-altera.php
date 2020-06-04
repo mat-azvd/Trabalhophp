@@ -8,6 +8,7 @@
 $id = $_GET['id'];
 
 $produto = buscaProduto($conexao, $id);
+
 ?>
 
 <form method="POST" action="altera-produto.php?id=<?=  $produto['id'] ?> " enctype="multipart/form-data">
@@ -41,7 +42,7 @@ $produto = buscaProduto($conexao, $id);
 
             <tr>
                 <td>Imagem</td>
-                <td> Atual: <?php echo $produto['imagem'] ?> <br><input name="imagem" src="<?= $produto['imagem'] ?>" type="file" id="imagem" /></td>
+                <td> Atual: <?php echo $produto['imagem'] ?> <br><input name="imagem" src="<?php echo $produto['imagem'] ?>" type="file" id="imagem" /></td>
             </tr>
 
             <tr>
