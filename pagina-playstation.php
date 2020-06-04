@@ -35,7 +35,7 @@
                                 <?php
                                 if(isset($_COOKIE["admin_logado"])) {
                                 ?>
-                                <div class="Editar">
+                                <div class="comprar">
                                 <a href="pagina-altera.php?id=<?=  $produto['id'] ?>"><button>Editar </button><br>
                                 </div>
                                 <?php

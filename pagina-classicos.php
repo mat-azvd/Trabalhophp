@@ -31,9 +31,22 @@
                                     <p class="preço"><b>R$<?= $produto['preco'] ?></b></a><br>
 
                                 </div>
+                                <?php
+                                if(isset($_COOKIE["admin_logado"])) {
+                                ?>
                                 <div class="comprar">
-                                    <button><img src="img/carrinhoDeCompras.png">Comprar </button><br>
+                                <a href="pagina-altera.php?id=<?=  $produto['id'] ?>"><button>Editar </button><br>
                                 </div>
+                                <?php
+                                }else {
+                                ?>
+
+                                <div class="comprar">
+                                        <button><img src="img/carrinhoDeCompras.png">Comprar </button><br>
+                                </div>
+                                <?php
+                                }
+                                ?>
                             </div>
 
 

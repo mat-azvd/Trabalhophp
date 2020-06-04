@@ -55,7 +55,7 @@ function alteraProduto($conexao, $nome, $preco, $categoria, $detalhes, $diretori
 
 if(alteraProduto($conexao, $nome, $preco, $categoria, $detalhes, $diretorio, $id )) {
 
-header("Location: pagina-produto.php?id= $id");
+    header("Location: pagina-produto.php?id= $id");
 
 die();
 ?>

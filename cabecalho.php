@@ -41,6 +41,8 @@ if(isset($_GET["logout"]) && $_GET["logout"]==true) {
                     if(isset($_COOKIE["usuario_logado"])) {
                     ?>
                     <p class="text-success">Bem vindo <?=$_COOKIE["usuario_logado"] ?>!</p><br>
+                    <a href="editarconta.php" > - Editar conta - </a>
+                    <a href="carrinho.php" > - Carrinho - </a>
                     <a href="index.php?logout=true" > - logout - </a>
                     <?php
                     }else {
