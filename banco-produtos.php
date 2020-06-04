@@ -84,3 +84,23 @@ function removeProduto($conexao, $id) {
 
 ?>
 
+
+
+<?php
+
+function paginaProduto($conexao){
+
+    $nomeproduto = $_GET['nome'];
+
+    //echo $nomeproduto;
+
+    $query = "select * from produtos where nome = '{$nomeproduto}'";
+    $resultado = mysqli_query($conexao, $query);
+    $produto = mysqli_fetch_assoc($resultado);
+    return $produto;
+
+}
+
+
+?>
+
