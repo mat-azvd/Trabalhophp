@@ -23,7 +23,7 @@
                         
                             <div class="flex-viewport" style="overflow: hidden;position: relative;">
 
-                                <img class="gmae-image" src=<?= $produto['imagem'] ?> alt="game-01">
+                            <a href="pagina-produto.php?nome=<?=  $produto['nome'] ?>"><img class="gmae-image" src=<?= $produto['imagem'] ?> alt="game-01"></a>
 
                                 <div class="info-do-produto">
                                     <p class="nome-produto"><b><?= $produto['nome'] ?><br></b></p><br>
