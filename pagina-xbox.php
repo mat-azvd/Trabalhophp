@@ -24,7 +24,7 @@
                         
                             <div class="flex-viewport" style="overflow: hidden;position: relative;">
 
-                            <a href="pagina-produto.php?nome=<?=  $produto['nome'] ?>"><img class="gmae-image" src=<?= $produto['imagem'] ?> alt="game-01"></a>
+                            <a href="pagina-produto.php?id=<?=  $produto['id'] ?>"><img class="gmae-image" src=<?= $produto['imagem'] ?> alt="game-01"></a>
 
                                 <div class="info-do-produto">
                                     <p class="nome-produto"><b><?= $produto['nome'] ?><br></b></p><br>
@@ -32,9 +32,21 @@
                                     <p class="preço"><b>R$<?= $produto['preco'] ?></b></a><br>
 
                                 </div>
+                                <?php
+                                if(isset($_COOKIE["admin_logado"])) {
+                                ?>
+                                    <div class="Editar">
+                                    <a href="pagina-altera.php?id=<?=  $produto['id'] ?>"><button>Editar </button><br>
+                                    </div>
+                                <?php
+                                }else {
+                                ?>
                                 <div class="comprar">
                                     <button><img src="img/carrinhoDeCompras.png">Comprar </button><br>
                                 </div>
+                                <?php
+                                }
+                                ?>
                             </div>
 
 

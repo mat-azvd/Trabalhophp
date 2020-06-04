@@ -5,7 +5,7 @@
 <?php include("conexao.php"); ?>
 
 
-<?php $produto = paginaProduto($conexao);?>
+<?php $produto = buscaProduto($conexao);?>
 
 <div class="flex-viewport" style="overflow: hidden; position: relative;">
 
