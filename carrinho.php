@@ -101,6 +101,7 @@ $carrinhos = listaProdutoCarrinho($conexao, $iduser);
         <?php endforeach ?>
         <?php
         
+        
         ?>
         </tbody>
 
