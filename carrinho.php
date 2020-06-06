@@ -79,9 +79,9 @@ $carrinhos = listaProdutoCarrinho($conexao, $iduser);
 
         $quantidade = $carrinho['quantidade'];
 
-        echo($id);
+        //echo($id);
 
-        echo($quantidade);
+        //echo($quantidade);
 
 
         $produto = buscaProduto($conexao, $id);
@@ -92,7 +92,7 @@ $carrinhos = listaProdutoCarrinho($conexao, $iduser);
                 <th ></th>
                 <th width="30%"> <?php echo $produto['nome'] ?></th>
                 <th width="20%"> <?php echo $produto['preco'] ?> R$ </th>
-                <th width="5%"> <?php echo $quantidade ?> </th>
+                <th width="5%"> <input id="quantidade" name="quantidade" type="number" class="form-control" value="<?php echo $quantidade ?>"> </imput> </th>
                 <th width="20%"> <?php echo ($produto['preco']*$quantidade) ?> R$ </th>
                 <th width="10%"> <?php $produto['imagem'] ?> </th>
                 <th><button class="Remover" onclick=""> Remover </button> </th>
