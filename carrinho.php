@@ -33,15 +33,17 @@
 
 */
 
-if(isset($_GET['id']) && isset($_COOKIE['usuario_id'])){
+if(isset($_GET['id']) && isset($_COOKIE['usuario_id']) && isset($_GET['add']) ){
 
 $idproduto = $_GET['id'];
 
 $iduser = $_COOKIE['usuario_id'];
 
-//add carrinho $carrinho = addProdutoCarrinho($conexao, $iduser, $idproduto);
+$carrinho = addProdutoCarrinho($conexao, $iduser, $idproduto);
 
 $carrinhos = listaProdutoCarrinho($conexao, $iduser); 
+
+header("Location: carrinho.php");
 
 //naoexiste $itenscarrinho = buscaProdutoCarrinho($conexao, $iduser);
             
@@ -88,11 +90,12 @@ $carrinhos = listaProdutoCarrinho($conexao, $iduser);
             
         <tr> 
                 <th ></th>
-                <th width="40%"> <?php echo $produto['nome'] ?></th>
-                <th width="10%"> <?php echo $produto['preco'] ?> </th>
-                <th width="10%"> <?php echo $quantidade ?> </th>
-                <th width="10%"> </th>
+                <th width="30%"> <?php echo $produto['nome'] ?></th>
+                <th width="20%"> <?php echo $produto['preco'] ?> R$ </th>
+                <th width="5%"> <?php echo $quantidade ?> </th>
+                <th width="20%"> <?php echo ($produto['preco']*$quantidade) ?> R$ </th>
                 <th width="10%"> <?php $produto['imagem'] ?> </th>
+                <th><button class="Remover" onclick=""> Remover </button> </th>
         </tr>
 
         <?php endforeach ?>
