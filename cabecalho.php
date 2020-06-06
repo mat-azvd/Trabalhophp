@@ -56,6 +56,7 @@ if(isset($_GET["logout"]) && $_GET["logout"]==true) {
                             ?>
                                 <a href="minha-conta.php"> - Minha Conta - </a>
                                 <a href="cadastro.php"> - Cadastrar-se - </a>
+                                <a href="carrinho.php" > - Carrinho - </a>
                             <?php
                             }
                         }

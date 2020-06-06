@@ -1,3 +1,14 @@
+
+
+
+
+        <script src="js/principal.js"></script>
+    </body>
+</div>
+
+
+</html>
+
 <footer class="rodape">
 
     <img class="redes" src="img/036-facebook.png">

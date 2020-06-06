@@ -8,7 +8,7 @@
 
 <?php $produto = buscaProduto($conexao, $id);?>
 
-<div class="flex-viewport" style="overflow: hidden; position: relative;">
+<div class="flex-viewport2" style="overflow: hidden; position: relative;">
 
         <img class="gmae-image" src=<?= $produto['imagem'] ?> alt="game-01">
 
@@ -29,7 +29,7 @@
                                 ?>
 
                                 <div class="comprar">
-                                        <button><img src="img/carrinhoDeCompras.png">Comprar </button><br>
+                                <a href="carrinho.php?id=<?=  $produto['id'] ?>"> <button><img src="img/carrinhoDeCompras.png">Comprar </button><br></a>
                                 </div>
                                 <?php
                                 }

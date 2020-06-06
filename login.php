@@ -34,6 +34,7 @@ if($usuario == null) {
     }else{
 
         setcookie("usuario_logado", $usuario["email"]);
+        setcookie("usuario_id", $usuario["iduser"]);
 
         header("Location: index.php?usuariologado");
         }

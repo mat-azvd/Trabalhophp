@@ -11,6 +11,8 @@
     return $produtos;
     }
 
+    
+
 ?>
 
 <?php
@@ -116,6 +118,54 @@ function buscaProduto($conexao, $id){
 
 }
 
+
+?>
+
+<?php
+
+//function carrinhoQuantidade($conexao, )
+
+function listaProdutoCarrinho($conexao, $iduser) {
+
+        $carrinhos = array();
+        $resultado = mysqli_query($conexao, "select * from carrinho where iduser = '{$iduser}'");
+
+        while($carrinho = mysqli_fetch_assoc($resultado)) {
+            array_push($carrinhos, $carrinho);
+        }
+    return $carrinhos;
+    }
+
+    /*$querycarrinho = 
+    $resultado = mysqli_query($conexao, $querycarrinho);
+    $carrinho = mysqli_fetch_assoc($resultado);
+    return $carrinho;
+    */
+
+function addProdutoCarrinho($conexao, $iduser, $idproduto){
+ 
+    $querycarrinho = "select * from carrinho where iduser = '{$iduser}' and idproduto = '{$idproduto}'";
+    $resultado = mysqli_query($conexao, $querycarrinho);
+    $carrinho = mysqli_fetch_assoc($resultado);
+
+    if($carrinho!=null) {
+        $carrinho['quantidade'] += 1;
+        $novaquantidade = $carrinho['quantidade'];
+        $query = "update carrinho set quantidade='{$novaquantidade}' where iduser='$iduser' and idproduto='$idproduto'";
+        $resultado = mysqli_query($conexao, $query);
+        //$carrinho = mysqli_fetch_assoc($resultado);
+        return $carrinho;
+
+    } else {
+
+        $query = "insert into carrinho (iduser, idproduto, quantidade) values ('{$iduser}','{$idproduto}', '1')";
+        $resultado = mysqli_query($conexao, $query);
+        //$carrinho = mysqli_fetch_assoc($resultado);
+        return $carrinho;
+
+    }
+
+}
 
 ?>
 
