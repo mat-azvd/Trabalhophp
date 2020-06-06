@@ -167,5 +167,17 @@ function addProdutoCarrinho($conexao, $iduser, $idproduto){
 
 }
 
+
+function removeCarrinho($conexao, $iduser, $id) {
+
+    $query = "delete * from carrinho where iduser= '{$iduser}' and idproduto='{$id}'";
+    //$resultado = mysqli_query($conexao, $query);
+    //$carrinho = mysqli_fetch_assoc($resultado);
+    //return $carrinho;
+
+    //header("Location: carrinho.php");
+    
+}
+
 ?>
 

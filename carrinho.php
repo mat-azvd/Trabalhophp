@@ -1,6 +1,8 @@
-<?php include("banco-produtos.php");?>
+
 
 <?php include("cabecalho.php");?>
+
+<?php include("banco-produtos.php");?>
 
 <?php include("conexao.php"); ?>
 
@@ -92,16 +94,30 @@ $carrinhos = listaProdutoCarrinho($conexao, $iduser);
                 <th ></th>
                 <th width="30%"> <?php echo $produto['nome'] ?></th>
                 <th width="20%"> <?php echo $produto['preco'] ?> R$ </th>
-                <th width="5%"> <input id="quantidade" name="quantidade" type="number" class="form-control" value="<?php echo $quantidade ?>"> </imput> </th>
+                
+                <th width="5%">
+                    <form action="">
+                        <input name="quantidade" type="number" class="form-control" value="<?php echo $quantidade ?>"> </input>
+                        <button> alterar </button>
+                    </form>
+                </th>
+                
                 <th width="20%"> <?php echo ($produto['preco']*$quantidade) ?> R$ </th>
                 <th width="10%"> <?php $produto['imagem'] ?> </th>
-                <th><button class="Remover" onclick=""> Remover </button> </th>
+                <th>
+
+                <!--<?php echo($iduser); ?>-->
+                <!--<?php echo($id); ?>-->
+                
+                <a href="remover.php?iduser=<?=$iduser ?>&id=<?=$id ?>"><button >Remover</button>
+                
+                </th>
         </tr>
 
         <?php endforeach ?>
         <?php
         
-        
+
         ?>
         </tbody>
 

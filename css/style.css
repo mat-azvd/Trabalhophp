@@ -5,6 +5,10 @@
     height: 87px;
 }
 
+.corpo {
+    height: 100%;
+}
+
 .cabecalho #logo {
     width: 100%;
     max-width: 500px;

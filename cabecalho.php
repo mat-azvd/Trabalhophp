@@ -12,7 +12,7 @@
 </head>
 
 
-<body>
+<body class="corpo">
 <?php
 if(isset($_GET["logout"]) && $_GET["logout"]==true) {
     setcookie("admin_logado");
