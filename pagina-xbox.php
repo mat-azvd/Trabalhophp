@@ -39,19 +39,29 @@
                                     <a href="pagina-altera.php?id=<?=  $produto['id'] ?>"><button>Editar </button><br>
                                     </div>
                                 <?php
-                                }else {
-                                ?>
-                                <div class="comprar">
-                                    <button><img src="img/carrinhoDeCompras.png">Comprar </button><br>
-                                </div>
-                                <?php
-                                }
-                                ?>
+                               }else { 
+                                if (isset($_COOKIE['usuario_logado'])){
+                                    ?>
+                                    <div class="comprar">
+                                        <a href="carrinho.php?add&id=<?=  $produto['id'] ?>"> <button><img src="img/carrinhoDeCompras.png">Adicionar no Carrinho </button><br></a>
+                                    </div>
+                            <?php
+                                } else {
+                            ?>
+
+                            <div class="comprar">
+                                <a href="carrinho.php?add&id=<?=  $produto['id'] ?>"> <button><img src="img/carrinhoDeCompras.png">Adicionar no Carrinho </button><br></a>
                             </div>
+                            <?php
+                            }
+                            }
+                            ?>
+                            
+                    </div>
 
 
-                        
-                    <?php endforeach ?>
+                    
+                <?php endforeach ?>
 <!--
                 <div class="container">
                     <div class="flex-viewport" style="overflow: hidden;position: relative;">

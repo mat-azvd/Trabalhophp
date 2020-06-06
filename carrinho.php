@@ -58,7 +58,7 @@ $carrinhos = listaProdutoCarrinho($conexao, $iduser);
 ?>
 
 
-<table class="table table-strip" >
+<table id="tabela" class="table table-strip" >
 
 
         <thead>

@@ -47,15 +47,21 @@ $produto = buscaProduto($conexao, $id);
 
             <tr>
                 <td></td>
-                <td><input type="submit" value="Alterar" class="btnbtn-primary" /></td>
+                <td><input type="submit" value="Alterar" class="btnbtn-primary" /></td>                      
             </tr>
+
+            <tr>
+                <td></td>
+            </tr>
+
+            
            
         </table>
     </form>
 
+    <a href="deletaproduto.php?id=<?=$id ?>"><button >Deletar Produto</button>
 
-
-
-
+    
+ 
 
 <?php include("rodape.php");  ?>

@@ -4,6 +4,16 @@
 
 <?php include("conexao.php"); ?>
 
+<?php
+
+if(isset($_GET["deletado"])){
+?>
+    <p class="alert-success">Produto deletado com sucesso.</p>
+<?php
+}
+
+?>
+
 <div class="slideshow-container">
 
     <div class="mySlides fade">
